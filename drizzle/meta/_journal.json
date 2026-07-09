@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1783604841311,
+      "tag": "0000_familiar_red_hulk",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1783609570806,
+      "tag": "0001_lovely_post",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1783611628896,
+      "tag": "0002_bitter_lockjaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1783612199260,
+      "tag": "0003_petite_venom",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1783615759771,
+      "tag": "0004_sweet_night_thrasher",
+      "breakpoints": true
+    }
+  ]
+}
