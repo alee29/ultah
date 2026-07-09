@@ -43,7 +43,7 @@ export function SecretLockScreen({
       >
         <PinPad
           title="Pesan Rahasia"
-          subtitle="Masukkan PIN rahasia kita"
+          subtitle="Hayoo apa pinnya?"
           onSubmit={(pin) =>
             pin === passcode
               ? { success: true }
