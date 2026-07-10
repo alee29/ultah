@@ -12,8 +12,19 @@ export const mockSettings: SiteSettings = {
   mainGreeting:
     "Selamat ulang tahun, sayangku. Setiap hari yang kulewati bersamamu terasa seperti hadiah, dan hari ini adalah harimu untuk dirayakan sepenuh hati. Semoga tahun ini membawa lebih banyak tawa, kejutan manis, dan mimpi-mimpi yang jadi nyata. Terima kasih sudah menjadi alasan aku tersenyum setiap hari. Aku mencintaimu, lebih dari yang bisa diucapkan kata-kata.",
   musicUrl: "/audio/our-song.mp3",
-  musicTitle: "shape my heart",
+  musicTitle: "Shape Of My Heart",
 };
+
+export type Track = {
+  id: string;
+  title: string;
+  url: string;
+};
+
+export const mockPlaylist: Track[] = [
+  { id: "shape-of-my-heart", title: "Shape Of My Heart", url: "/audio/our-song.mp3" },
+  { id: "about-you", title: "About You", url: "/audio/about-you.mp3" },
+];
 
 export type MemoryPhoto = {
   id: string;

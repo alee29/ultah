@@ -9,9 +9,10 @@ import type { MemoryPhoto } from "@/lib/mock-data";
 
 type PhotoCarouselProps = {
   photos: MemoryPhoto[];
+  onPhotoClick?: (photo: MemoryPhoto) => void;
 };
 
-export function PhotoCarousel({ photos }: PhotoCarouselProps) {
+export function PhotoCarousel({ photos, onPhotoClick }: PhotoCarouselProps) {
   const sortedPhotos = [...photos].sort((a, b) => a.sortOrder - b.sortOrder);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -68,7 +69,11 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
               }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              <PhotoFrame imageUrl={photo.imageUrl} caption={photo.caption} />
+              <PhotoFrame
+                imageUrl={photo.imageUrl}
+                caption={photo.caption}
+                onClick={onPhotoClick ? () => onPhotoClick(photo) : undefined}
+              />
             </motion.div>
           </div>
         ))}

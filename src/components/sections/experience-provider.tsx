@@ -3,11 +3,14 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useRef,
   useState,
   type ReactNode,
   type RefObject,
 } from "react";
+
+import type { Track } from "@/lib/mock-data";
 
 type ExperienceContextValue = {
   isOpened: boolean;
@@ -15,22 +18,38 @@ type ExperienceContextValue = {
   isPlaying: boolean;
   togglePlayback: () => void;
   audioRef: RefObject<HTMLAudioElement | null>;
+  playlist: Track[];
+  currentTrack: Track;
+  selectTrack: (id: string) => void;
 };
 
 const ExperienceContext = createContext<ExperienceContextValue | null>(null);
 
 type ExperienceProviderProps = {
-  musicUrl: string;
+  playlist: Track[];
   children: ReactNode;
 };
 
 export function ExperienceProvider({
-  musicUrl,
+  playlist,
   children,
 }: ExperienceProviderProps) {
   const [isOpened, setIsOpened] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrackId, setCurrentTrackId] = useState(playlist[0].id);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const isFirstTrack = useRef(true);
+
+  const currentTrack =
+    playlist.find((track) => track.id === currentTrackId) ?? playlist[0];
+
+  useEffect(() => {
+    if (isFirstTrack.current) {
+      isFirstTrack.current = false;
+      return;
+    }
+    audioRef.current?.play().catch(() => setIsPlaying(false));
+  }, [currentTrackId]);
 
   function togglePlayback() {
     const audio = audioRef.current;
@@ -48,13 +67,26 @@ export function ExperienceProvider({
     audioRef.current?.play().catch(() => setIsPlaying(false));
   }
 
+  function selectTrack(id: string) {
+    setCurrentTrackId(id);
+  }
+
   return (
     <ExperienceContext.Provider
-      value={{ isOpened, openGift, isPlaying, togglePlayback, audioRef }}
+      value={{
+        isOpened,
+        openGift,
+        isPlaying,
+        togglePlayback,
+        audioRef,
+        playlist,
+        currentTrack,
+        selectTrack,
+      }}
     >
       <audio
         ref={audioRef}
-        src={musicUrl}
+        src={currentTrack.url}
         loop
         preload="none"
         onPlay={() => setIsPlaying(true)}

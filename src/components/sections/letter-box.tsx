@@ -26,7 +26,7 @@ export function LetterBox({ letterContent }: LetterBoxProps) {
       </p>
 
       <p className="font-heading mt-8 text-right text-sm text-primary italic">
-        — Dengan cinta
+        — Dengan cinta, Ale
       </p>
     </motion.div>
   );

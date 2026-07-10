@@ -7,11 +7,16 @@ import { MusicPlayerBar } from "@/components/sections/music-player-bar";
 import { RevealedContent } from "@/components/sections/revealed-content";
 import { SecretMessageSection } from "@/components/sections/secret-message-section";
 import { SurpriseButtonSection } from "@/components/sections/surprise-button-section";
-import { mockPhotos, mockSecretMessage, mockSettings } from "@/lib/mock-data";
+import {
+  mockPhotos,
+  mockPlaylist,
+  mockSecretMessage,
+  mockSettings,
+} from "@/lib/mock-data";
 
 export default function Home() {
   return (
-    <ExperienceProvider musicUrl={mockSettings.musicUrl}>
+    <ExperienceProvider playlist={mockPlaylist}>
       <FloatingHeartsBackground />
       <div className="flex flex-1 flex-col">
         <main className="flex flex-1 flex-col">
@@ -24,7 +29,7 @@ export default function Home() {
           </RevealedContent>
         </main>
         <RevealedContent>
-          <MusicPlayerBar settings={mockSettings} />
+          <MusicPlayerBar />
         </RevealedContent>
       </div>
     </ExperienceProvider>

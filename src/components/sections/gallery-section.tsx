@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { PhotoCarousel } from "@/components/sections/photo-carousel";
 import { PhotoFrame } from "@/components/sections/photo-frame";
+import { PhotoLightbox } from "@/components/sections/photo-lightbox";
 import { cn } from "@/lib/utils";
 import type { MemoryPhoto } from "@/lib/mock-data";
 
@@ -15,6 +17,7 @@ const ROTATIONS = [-3, 2.5, -2, 3, -1.5, 2];
 
 export function GallerySection({ photos }: GallerySectionProps) {
   const sortedPhotos = [...photos].sort((a, b) => a.sortOrder - b.sortOrder);
+  const [selectedPhoto, setSelectedPhoto] = useState<MemoryPhoto | null>(null);
 
   return (
     <section className="py-16 sm:py-20 lg:py-24">
@@ -43,6 +46,7 @@ export function GallerySection({ photos }: GallerySectionProps) {
                   imageUrl={photo.imageUrl}
                   caption={photo.caption}
                   rotate={ROTATIONS[index % ROTATIONS.length]}
+                  onClick={() => setSelectedPhoto(photo)}
                 />
               </motion.div>
             </div>
@@ -59,9 +63,17 @@ export function GallerySection({ photos }: GallerySectionProps) {
         </p>
 
         <div className="mt-6">
-          <PhotoCarousel photos={sortedPhotos} />
+          <PhotoCarousel
+            photos={sortedPhotos}
+            onPhotoClick={setSelectedPhoto}
+          />
         </div>
       </div>
+
+      <PhotoLightbox
+        photo={selectedPhoto}
+        onClose={() => setSelectedPhoto(null)}
+      />
     </section>
   );
 }
