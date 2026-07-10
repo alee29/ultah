@@ -55,6 +55,6 @@ export const mockSecretMessage: SecretMessage = {
   id: "1",
   passcode: "100705",
   letterContent:
-    "MANKK EAKKK DEKKKK.",
+    "RAHASIA.",
   showNotification: true,
 };
