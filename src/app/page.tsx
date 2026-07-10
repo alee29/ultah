@@ -25,8 +25,8 @@ export default function Home() {
           <RevealedContent>
             <StickerRow
               stickers={[
-                { src: "/stickers/sticker-07.webp", rotate: 18, size: 112, offsetY: -16 },
-                { src: "/stickers/sticker-08.webp", rotate: -16, size: 160, offsetY: 12 },
+                { src: "/stickers/sticker-07.webp", rotate: 18, size: 172, offsetY: -16 },
+                { src: "/stickers/sticker-08.webp", rotate: -16, size: 220, offsetY: 12 },
               ]}
             />
             <GreetingCardSection settings={mockSettings} />
