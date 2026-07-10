@@ -36,7 +36,7 @@ export function StickerRow({ stickers, className }: StickerRowProps) {
             scale: 1,
             rotate: sticker.rotate ?? 0,
           }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.12 }}
           style={{
             width: sticker.size ?? 132,

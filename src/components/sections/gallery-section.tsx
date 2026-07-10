@@ -42,7 +42,7 @@ export function GallerySection({
             aria-hidden="true"
             initial={{ opacity: 0, scale: 0.6 }}
             whileInView={{ opacity: 1, scale: 1, rotate: sticker.rotate ?? 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={{
               width: sticker.size ?? 140,
@@ -66,7 +66,7 @@ export function GallerySection({
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{
                   duration: 0.5,
                   delay: index * 0.08,

@@ -24,7 +24,7 @@ export function GreetingCardSection({ settings }: GreetingCardSectionProps) {
         className="mx-auto max-w-lg lg:max-w-xl"
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <Card className="border-none bg-card/80 py-10 shadow-xl ring-1 ring-primary/10 backdrop-blur lg:py-14">
@@ -33,7 +33,7 @@ export function GreetingCardSection({ settings }: GreetingCardSectionProps) {
               className="font-heading text-sm tracking-widest text-primary uppercase lg:text-base"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {formatBirthDate(settings.birthDate)}
@@ -42,7 +42,7 @@ export function GreetingCardSection({ settings }: GreetingCardSectionProps) {
               className="font-heading mt-3 text-2xl font-semibold text-foreground italic sm:text-3xl lg:text-4xl"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ duration: 0.7, delay: 0.35 }}
             >
               Selamat Ulang Tahun
@@ -51,7 +51,7 @@ export function GreetingCardSection({ settings }: GreetingCardSectionProps) {
               className="mt-6 text-pretty text-muted-foreground leading-relaxed lg:text-base lg:leading-loose"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               {settings.mainGreeting}

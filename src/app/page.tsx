@@ -25,8 +25,8 @@ export default function Home() {
           <RevealedContent>
             <StickerRow
               stickers={[
-                { src: "/stickers/sticker-01.webp", rotate: -18, size: 150, offsetY: 14 },
-                { src: "/stickers/sticker-02.webp", rotate: 14, size: 108, offsetY: -18 },
+                { src: "/stickers/sticker-07.webp", rotate: 18, size: 112, offsetY: -16 },
+                { src: "/stickers/sticker-08.webp", rotate: -16, size: 160, offsetY: 12 },
               ]}
             />
             <GreetingCardSection settings={mockSettings} />
@@ -58,8 +58,8 @@ export default function Home() {
             />
             <StickerRow
               stickers={[
-                { src: "/stickers/sticker-07.webp", rotate: 18, size: 112, offsetY: -16 },
-                { src: "/stickers/sticker-08.webp", rotate: -16, size: 160, offsetY: 12 },
+                { src: "/stickers/sticker-01.webp", rotate: -18, size: 150, offsetY: 14 },
+                { src: "/stickers/sticker-02.webp", rotate: 14, size: 108, offsetY: -18 },
               ]}
             />
             <SecretMessageSection secret={mockSecretMessage} />
