@@ -24,6 +24,7 @@ export type Track = {
 export const mockPlaylist: Track[] = [
   { id: "shape-of-my-heart", title: "Shape Of My Heart", url: "/audio/our-song.mp3" },
   { id: "about-you", title: "About You", url: "/audio/about-you.mp3" },
+  { id: "makasih", title: "Makasih", url: "/audio/makasih.mp3" },
 ];
 
 export type MemoryPhoto = {
