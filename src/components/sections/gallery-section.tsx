@@ -89,9 +89,6 @@ export function GallerySection({
         <p className="font-heading text-sm tracking-widest text-primary uppercase lg:text-base">
           Album Geser
         </p>
-        <p className="mt-2 px-6 text-sm text-muted-foreground">
-          Geser untuk melihat kenangan lainnya
-        </p>
 
         <div className="mt-6">
           <PhotoCarousel
