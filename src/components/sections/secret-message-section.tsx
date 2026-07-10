@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
+import { EjekClip } from "@/components/sections/ejek-clip";
 import { HeartNotification } from "@/components/sections/heart-notification";
 import { LetterBox } from "@/components/sections/letter-box";
 import { SecretLockScreen } from "@/components/sections/secret-lock-screen";
@@ -23,7 +24,10 @@ export function SecretMessageSection({ secret }: SecretMessageSectionProps) {
       </p>
 
       {isUnlocked ? (
-        <LetterBox letterContent={secret.letterContent} />
+        <>
+          <LetterBox letterContent={secret.letterContent} />
+          <EjekClip />
+        </>
       ) : (
         <p className="max-w-sm text-sm text-muted-foreground">
           Ada pesan rahasia yang menunggu untuk dibuka. Sentuh ikon hati yang

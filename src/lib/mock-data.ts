@@ -8,7 +8,7 @@ export type SiteSettings = {
 
 export const mockSettings: SiteSettings = {
   partnerName: "Sazkia Aurelia",
-  birthDate: "2005-07-10",
+  birthDate: "2010-07-10",
   mainGreeting:
     "Selamat ulang tahun, sayangku. Setiap hari yang kulewati bersamamu terasa seperti hadiah, dan hari ini adalah harimu untuk dirayakan sepenuh hati. Semoga tahun ini membawa lebih banyak tawa, kejutan manis, dan mimpi-mimpi yang jadi nyata. Terima kasih sudah menjadi alasan aku tersenyum setiap hari. Aku mencintaimu, lebih dari yang bisa diucapkan kata-kata.",
   musicUrl: "/audio/our-song.mp3",
@@ -38,7 +38,7 @@ export const mockPhotos: MemoryPhoto[] = Array.from(
   (_, index) => ({
     id: String(index + 1),
     imageUrl: `/photos/memory-${index + 1}.jpg`,
-    caption: `Foto si NDUTZ ${index + 1}`,
+    caption: "",
     sortOrder: index + 1,
   })
 );

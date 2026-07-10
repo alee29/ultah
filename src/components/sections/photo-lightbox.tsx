@@ -42,7 +42,7 @@ export function PhotoLightbox({ photo, onClose }: PhotoLightboxProps) {
           onClick={onClose}
           role="dialog"
           aria-modal="true"
-          aria-label={photo.caption}
+          aria-label={photo.caption || "Foto kenangan"}
         >
           <motion.div
             className="relative w-full max-w-lg"
@@ -71,9 +71,11 @@ export function PhotoLightbox({ photo, onClose }: PhotoLightboxProps) {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                {photo.caption}
-              </p>
+              {photo.caption && (
+                <p className="mt-4 text-center text-sm text-muted-foreground">
+                  {photo.caption}
+                </p>
+              )}
             </div>
           </motion.div>
         </motion.div>

@@ -48,8 +48,9 @@ export function ExperienceProvider({
       isFirstTrack.current = false;
       return;
     }
+    if (!isOpened) return;
     audioRef.current?.play().catch(() => setIsPlaying(false));
-  }, [currentTrackId]);
+  }, [currentTrackId, isOpened]);
 
   function togglePlayback() {
     const audio = audioRef.current;

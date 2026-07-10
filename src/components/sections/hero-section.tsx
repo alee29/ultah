@@ -5,6 +5,7 @@ import { Gift, Heart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useExperience } from "@/components/sections/experience-provider";
+import { SongPicker } from "@/components/sections/song-picker";
 import type { SiteSettings } from "@/lib/mock-data";
 
 type HeroSectionProps = {
@@ -52,6 +53,13 @@ export function HeroSection({ settings }: HeroSectionProps) {
               Ada sesuatu yang spesial menantimu di dalam. Sentuh tombol di
               bawah untuk membukanya.
             </p>
+
+            <div className="mt-6 flex flex-col items-center gap-1.5">
+              <p className="text-xs text-muted-foreground">
+                pilihh laguu
+              </p>
+              <SongPicker />
+            </div>
 
             <Button
               size="lg"
